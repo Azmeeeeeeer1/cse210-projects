@@ -31,7 +31,18 @@ class Program
             letter = "F";
         }
 
-        Console.WriteLine($"You got {letter}");
+        string symbol;
+
+        if (percentage % 10 >= 7)
+        {
+            symbol = "+";
+        }
+        else
+        {
+            symbol = "-";
+        }
+
+        Console.WriteLine($"You got {letter}{symbol}");
 
         if (letter == "D" || letter == "F")
         {
