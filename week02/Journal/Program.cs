@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 using System.IO.Enumeration;
 using System.Xml.Serialization;
 
+
+// Added another condition, if the user types in anything other than the given options...it tells the user to choose from
+// the given options, and keeps prompting them until they choose.
 class Program
 {
     static void Main(string[] args)
