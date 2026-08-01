@@ -1,0 +1,52 @@
+using System.Collections.Generic;
+using System.Text;
+
+public class Order
+{
+    private List<Product> _products;
+    private Customer _customer;
+
+    public Order(Customer customer, List<Product> products)
+    {
+        _customer = customer;
+        _products = products;
+    }
+
+    public double CalculateTotalCost()
+    {
+        double total = 0;
+
+        foreach (Product product in _products)
+        {
+            total += product.GetTotalCost();
+        }
+
+        if (_customer.LivesInUSA())
+        {
+            total += 5;
+        }
+        else
+        {
+            total += 35;
+        }
+
+        return total;
+    }
+
+    public string GetPackingLabel()
+    {
+        StringBuilder output = new StringBuilder();
+
+        foreach (Product product in _products)
+        {
+            output.AppendLine($"{product.GetName()} - {product.GetProductId()}");
+        }
+
+        return output.ToString();
+    }
+
+    public string GetShippingLabel()
+    {
+        return $"{_customer.GetName()}\n{_customer.GetAddress()}";
+    }
+}
