@@ -1,6 +1,7 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
 
+// Added multiple scriptures, one of them randomly gets picked.
 class Program
 {
     static void Main(string[] args)
